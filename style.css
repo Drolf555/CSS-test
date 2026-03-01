@@ -22,7 +22,7 @@ header {
     background-color: #222;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 0px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     z-index: 1000;
 }
@@ -60,6 +60,7 @@ footer {
     max-width: 100%;
     height: auto;
 }
+
 
 
 
