@@ -1,6 +1,3 @@
-/* =========================
-   GENERAL BODY STYLING
-========================= */
 body {
     margin: 0; 
     font-family: Arial, Helvetica, sans-serif;
@@ -10,10 +7,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
-/* =========================
-   STICKY HEADER
-========================= */
 header {
     position: fixed; 
     top: 0;
@@ -25,10 +18,6 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     z-index: 1000;
 }
-
-/* =========================
-   NAVIGATION MENU
-========================= */
 nav {
     margin-top: 10px;
 }
@@ -44,10 +33,6 @@ nav a {
 nav a:hover {
     color: #00bfff;
 }
-
-/* =========================
-   MAIN CONTENT
-========================= */
 main {
     flex: 1;
     display: flex;
@@ -68,20 +53,12 @@ main {
     max-width: 100%;
     height: auto;
 }
-
-/* =========================
-   FOOTER
-========================= */
 footer {
     background-color: #222;
     color: white;
     text-align: center;
     padding: 15px 0;
 }
-
-/* =========================
-   ABOUT PAGE STYLING
-========================= */
 .about-page {
     background-color: white; /* same white background for consistency */
 }
@@ -96,10 +73,6 @@ footer {
     margin: 10px auto;
     line-height: 1.5;
 }
-
-/* =========================
-   CONTACT PAGE STYLING
-========================= */
 .contact-page {
     background-color: white; /* same white background */
 }
@@ -115,15 +88,9 @@ footer {
     line-height: 1.5;
 }
 
-/* =========================
-   RESPONSIVE ADJUSTMENTS
-========================= */
-@media (max-width: 600px) {
-    main {
-        padding-top: 180px;
-    }
 
     nav a {
         margin: 0 10px;
     }
 }
+
