@@ -92,32 +92,53 @@ main section h2,
 main section#games h3 {
     color: #ff6f00;
 }
-/* Update your existing nav a styles to include the button ID */
-nav a, #theme-toggle {
+
+
+
+/* Combined Navigation Styles */
+nav a, 
+#theme-toggle {
+    /* Copying your exact link styles */
     color: white;
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
     transition: color 0.3s ease;
-    
-    /* These lines reset the default button look */
-    background: none;
+
+    /* BUTTON RESET: This makes the button look like plain text */
+    background: transparent;
     border: none;
     padding: 0;
-    font-family: inherit; /* Uses Arial from body */
-    font-size: inherit;
+    font-family: inherit; /* Inherits Arial from body */
+    font-size: 16px;      /* Matches standard link size */
     cursor: pointer;
+    line-height: inherit;
+    appearance: none;     /* Removes mobile browser styling */
 }
 
-/* Ensure the hover effect applies to the button too */
-nav a:hover, #theme-toggle:hover {
+/* Combined Hover Effect */
+nav a:hover, 
+#theme-toggle:hover {
     color: #00bfff;
 }
 
-/* Specific Dark Mode overrides for the text color */
-body.dark-mode nav a:hover, 
-body.dark-mode #theme-toggle:hover {
-    color: #ff9f1c; /* Optional: a soccer-orange accent for dark mode */
+/* --- Dark Mode Functionality --- */
+
+/* Smooth transition for theme switching */
+body, header, footer, section {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* When the JS toggles this class */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* Make sure specific sections don't stay white */
+body.dark-mode .about-page, 
+body.dark-mode .contact-page {
+    background-color: #1a1a1a;
 }
 
 
