@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         themeBtn.addEventListener('click', () => {
             const isDark = document.body.classList.toggle('dark-mode');
             themeBtn.textContent = isDark ? "Day Match" : "Night Match";
+            console.log("Dark mode is now:", isDark);
         });
     }
 });
