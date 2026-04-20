@@ -95,50 +95,44 @@ main section#games h3 {
 
 
 
-/* Combined Navigation Styles */
-nav a, 
-#theme-toggle {
-    /* Copying your exact link styles */
+/* --- Dark Mode Functionality --- */
+
+/* 1. Smooth transition for theme switching */
+body, header, footer, section, main, .about-page, .contact-page {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* 2. The Night Match Styles */
+/* Adding 'body.dark-mode' before the page classes makes this rule stronger */
+body.dark-mode,
+body.dark-mode .about-page, 
+body.dark-mode .contact-page,
+body.dark-mode main {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+/* 3. Keep headers orange in Dark Mode */
+body.dark-mode h2, 
+body.dark-mode h3 {
+    color: #ff6f00 !important;
+}
+
+/* 4. Navigation Reset (To make the button look like a link) */
+nav a, #theme-toggle {
     color: white;
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
     transition: color 0.3s ease;
-
-    /* BUTTON RESET: This makes the button look like plain text */
     background: transparent;
     border: none;
     padding: 0;
-    font-family: inherit; /* Inherits Arial from body */
-    font-size: 16px;      /* Matches standard link size */
+    font-family: inherit;
+    font-size: 16px;
     cursor: pointer;
-    line-height: inherit;
-    appearance: none;     /* Removes mobile browser styling */
 }
 
-/* Combined Hover Effect */
-nav a:hover, 
-#theme-toggle:hover {
+nav a:hover, #theme-toggle:hover {
     color: #00bfff;
 }
-
-/* --- Dark Mode Functionality --- */
-
-/* Smooth transition for theme switching */
-body, header, footer, section {
-    transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-/* When the JS toggles this class */
-body.dark-mode {
-    background-color: #1a1a1a;
-    color: white;
-}
-
-/* Make sure specific sections don't stay white */
-body.dark-mode .about-page, 
-body.dark-mode .contact-page {
-    background-color: #1a1a1a;
-}
-
-
