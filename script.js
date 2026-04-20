@@ -3,27 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (themeBtn) {
         themeBtn.addEventListener('click', () => {
-            
+            // This is the line that actually makes the magic happen
             const isDark = document.body.classList.toggle('dark-mode');
-
-            if (isDark) {
-                themeBtn.textContent = "Switch to Day Match";
-            } else {
-                themeBtn.textContent = "Switch to Night Match";
-            }
+            themeBtn.textContent = isDark ? "Day Match" : "Night Match";
         });
     }
 
     const contactForm = document.getElementById('contact-form');
-    
     if (contactForm) {
         contactForm.addEventListener('submit', (event) => {
-            const emailInput = document.getElementById('user-email').value;
-
-            if (emailInput === "") {
-            
+            const emailInput = document.getElementById('user-email');
+            if (emailInput.value.trim() === "") {
                 event.preventDefault();
-                alert("Please enter an email address before submitting.");
+                alert("Please enter an email address.");
             }
         });
     }
