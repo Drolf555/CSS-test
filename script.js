@@ -6,3 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
             themeBtn.textContent = isDark ? "Day Match" : "Night Match";
         });
     }
+const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (event) => {
+            const emailInput = document.getElementById('user-email');
+            if (emailInput.value.trim() === "") {
+                event.preventDefault();
+                alert("Please enter an email address.");
+            }
+        });
+    }
+});
