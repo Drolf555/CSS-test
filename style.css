@@ -1,6 +1,6 @@
 * {
-    box-sizing: border-box;
-}
+    box-sizing: border-box; /* keeps layout consistent */
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
 }
 header {
-    position: fixed;
+    position: fixed; /* keeps header at top */
     top: 0;
     width: 100%;
     background-color: #222;
@@ -27,22 +27,31 @@ header h1 {
 }
 nav {
     margin-top: 10px;
-    display: flex;
+    display: flex; /* flexbox layout */
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
 }
 nav a,
-#theme-toggle {
+#theme-toggle,
+.menu-toggle {
     color: white;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 nav a:hover,
-#theme-toggle:hover {
+#theme-toggle:hover,
+.menu-toggle:hover {
     color: #00bfff;
+}
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 main {
     flex: 1;
@@ -59,7 +68,7 @@ main {
 .content img {
     display: block;
     margin: 20px auto;
-    max-width: 100%;
+    max-width: 100%; /* responsive images */
     height: auto;
 }
 footer {
@@ -91,8 +100,8 @@ main section#games h3 {
     font-family: inherit;
     font-size: 16px;
     cursor: pointer;
-    padding: 0;
 }
+/* smooth transition for dark mode */
 body,
 header,
 footer,
@@ -115,40 +124,27 @@ body.dark-mode h3 {
 }
 /* Tablet */
 @media (max-width: 768px) {
-    header {
-        padding: 16px 10px;
-    }
     main {
         padding-top: 210px;
     }
-    nav {
-        gap: 10px;
-    }
-    .about-page p,
-    .contact-page p {
-        font-size: 1rem;
-    }
 }
-/* Phone */
+/* Mobile hamburger menu */
 @media (max-width: 480px) {
-    header {
-        padding: 14px 8px;
-    }
     nav {
         flex-direction: column;
-        gap: 8px;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    nav a,
+    nav #theme-toggle {
+        display: none;
+    }
+    nav.active a,
+    nav.active #theme-toggle {
+        display: block;
     }
     main {
-        padding: 260px 15px 30px;
-    }
-    .content {
-        max-width: 100%;
-    }
-    .about-page p,
-    .contact-page p {
-        font-size: 0.95rem;
-    }
-    footer {
-        font-size: 0.9rem;
+        padding: 230px 15px 30px;
     }
 }
