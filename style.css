@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box; /* keeps layout consistent */
-
+}
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -33,6 +33,11 @@ nav {
     flex-wrap: wrap;
     gap: 12px;
 }
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 nav a,
 #theme-toggle,
 .menu-toggle {
@@ -46,6 +51,7 @@ nav a:hover,
 .menu-toggle:hover {
     color: #00bfff;
 }
+
 .menu-toggle {
     display: none;
     background: transparent;
@@ -134,19 +140,16 @@ body.dark-mode h3 {
         flex-direction: column;
         align-items: center;
     }
-    /* show hamburger button */
     .menu-toggle {
         display: block;
     }
-    /* hide links by default */
     .nav-links {
         display: none;
         flex-direction: column;
         gap: 10px;
         margin-top: 10px;
     }
-    /* show links when menu is clicked */
-    nav.active .nav-links {
+    .nav-links.show {
         display: flex;
     }
     main {
