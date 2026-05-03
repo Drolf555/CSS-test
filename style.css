@@ -132,17 +132,22 @@ body.dark-mode h3 {
 @media (max-width: 480px) {
     nav {
         flex-direction: column;
+        align-items: center;
     }
+    /* show hamburger button */
     .menu-toggle {
         display: block;
     }
-    nav a,
-    nav #theme-toggle {
+    /* hide links by default */
+    .nav-links {
         display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
     }
-    nav.active a,
-    nav.active #theme-toggle {
-        display: block;
+    /* show links when menu is active */
+    nav.active .nav-links {
+        display: flex;
     }
     main {
         padding: 230px 15px 30px;
